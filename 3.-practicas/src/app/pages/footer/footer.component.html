@@ -1,0 +1,15 @@
+<footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-12 col-md">
+        <small class="d-block mb-3 text-body-secondary">{{copyrigth}}</small>
+      </div>
+      <div class="col-6 col-md" *ngFor="let footers of footer">
+        <h5>{{footers.title}}</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1" *ngFor="let options of footers.options">
+            <a class="link-secondary text-decoration-none" href="#">{{options}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </footer>
