@@ -1,0 +1,29 @@
+.mensaje{
+    text-align: center;
+    font-size: large;
+    color: rgb(74,85,135);
+}
+
+.error{
+    font-size: 80px;
+    color: #2E7EED;
+    margin-block: 27px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.mensaje2{
+    font-size: medium;
+    color: rgb(74,85,135);
+    font-size: smaller;
+
+}
+
+.mensajeError{
+    display: grid;
+    place-items: center;
+
+}
+
+p{
+    text-align: center;
+}
