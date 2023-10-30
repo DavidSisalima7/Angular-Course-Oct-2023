@@ -1,0 +1,66 @@
+
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>{{''| titulo | titlecase }}</span> <!-- pipe que proviene de la carpeta pipes -->
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+
+
+<!-- <mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+ --><table mat-table [dataSource]="data" class="mat-elevation-z8 demo-table">
+  <!-- Position Column -->
+  <ng-container matColumnDef="demo-position">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+  </ng-container>
+
+  
+  <ng-container matColumnDef="demo-decimal">
+    <th mat-header-cell *matHeaderCellDef> Decimal </th> 
+    <td mat-cell *matCellDef="let element"> {{ element.decimal | percent:'1.2-2' }} </td> <!-- sirve para dos decimales, porcentaje es igual pero cambiar number como percent-->
+  </ng-container>
+
+  <ng-container matColumnDef="demo-currency">
+    <th mat-header-cell *matHeaderCellDef> Decimal </th> 
+    <td mat-cell *matCellDef="let element"> {{ element.weight | currency:'EUR':'symbol':'4.2-2' }} </td> 
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="demo-name">
+    <th mat-header-cell *matHeaderCellDef> Uppercase </th>
+    <td mat-cell *matCellDef="let element"> {{ element.name | uppercase | slice:0:6 }} </td>
+  </ng-container>
+  
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="demo-weight">
+    <th mat-header-cell *matHeaderCellDef> {{ 'Lowercase' | lowercase }} </th>
+    <td mat-cell *matCellDef="let element"> {{ element.name | lowercase | pSuspensivos }} </td>
+  </ng-container>
+
+  <!-- Date Column -->
+  <ng-container matColumnDef="demo-date">
+    <th mat-header-cell *matHeaderCellDef> Fecha </th>
+    <td mat-cell *matCellDef="let element"> {{ fecha | date:'fullDate'}} </td>
+  </ng-container>
+
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="demo-symbol">
+    <th mat-header-cell *matHeaderCellDef> Symbol </th>
+    <td mat-cell *matCellDef="let element"> {{ element.symbol | titlecase }} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
