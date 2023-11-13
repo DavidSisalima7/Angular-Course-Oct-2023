@@ -1,0 +1,16 @@
+<div class="main-card mb-3 card">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <img width="100%" src="{{detallesP.image}}" alt="Card image cap" class="card-img-top">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{detallesP.name}}</h5>
+                <p class="card-text">Status: {{detallesP.status}}</p>
+                <p class="card-text">Specie: {{detallesP.species}}</p>
+                <p class="card-text">Gender: {{detallesP.gender}}</p>
+                <small class="text-muted">{{ detallesP.created | date }}</small>
+            </div>
+        </div>
+    </div>
+</div>
