@@ -1,0 +1,44 @@
+<div class="container">
+    <br>
+    <div class="formgroup-inline">
+        <form (ngSubmit)="enviar(formulario)" #formulario="ngForm">
+            <div class="field">
+                <label for="firstname5" class="p-sr-only">Username</label>
+                <input 
+                    id="firstname5" 
+                    type="text"
+                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary"
+                    placeholder="Usuario" 
+                    [(ngModel)]="user" 
+                    name="usuario"
+                    #usuario="ngModel"
+                    pattern="(?=.*[A-Za-z]).{2,10}"
+                    required
+                    >
+                    <br>
+                    <small *ngIf="!usuario.valid && usuario.touched"
+                    id="username2-help" class="p-error">Error en el usuario</small>
+            </div>
+            <div class="field">
+                <label for="lastname5" class="p-sr-only">Password</label>
+                <input 
+                    id="lastname5" 
+                    type="password"
+                    class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary"
+                    placeholder="Contraseña" 
+                    [(ngModel)]="password" 
+                    name="contrasenia"
+                    #contrasenia="ngModel"
+                    required
+                    >
+                    <br>
+                    <small *ngIf="!contrasenia.valid && contrasenia.touched"
+                    id="username2-help" class="p-error">Porfavor completar el formulario</small>
+            </div>
+            
+            <button type="submit"
+                class="bg-primary border-primary-500 px-3 py-2 text-base border-1 border-solid border-round cursor-pointer transition-all transition-duration-200 hover:bg-primary-600 hover:border-primary-600 active:bg-primary-700 active:border-primary-700">Submit</button>
+        </form>
+    </div>
+
+</div>

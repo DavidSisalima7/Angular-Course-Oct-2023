@@ -1,0 +1,37 @@
+<div class="container">
+    <br>
+    <div class="formgroup-inline">
+        <form (ngSubmit)="enviar()" [formGroup]="formulario">
+        <div class="field">
+            <label for="firstname5" class="p-sr-only">Firstname</label>
+            <input 
+                id="firstname5" 
+                type="text" 
+                class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary" 
+                placeholder="User"
+                formControlName="user"
+                >
+                <br>
+                <small *ngIf="formulario.controls.user.errors && formulario.controls.user.touched"
+                id="username2-help" class="p-error">Error en el usuario</small>
+        </div>
+        <div class="field">
+            <label for="lastname5" class="p-sr-only">Lastname</label>
+            <input 
+            id="lastname5" 
+            type="password" 
+            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary" 
+            placeholder="Password"
+            formControlName="password"
+            >
+            <br>
+            <small *ngIf="formulario.controls.password.errors && formulario.controls.password.touched"
+            id="username2-help" class="p-error">Porfavor completar el formulario</small>
+        </div>
+        <button 
+        type="submit" 
+        class="bg-primary border-primary-500 px-3 py-2 text-base border-1 border-solid border-round cursor-pointer transition-all transition-duration-200 hover:bg-primary-600 hover:border-primary-600 active:bg-primary-700 active:border-primary-700">Enviar</button>
+    </form>
+    </div>
+        
+    </div> 
