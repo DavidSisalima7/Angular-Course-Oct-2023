@@ -1,0 +1,9 @@
+{{title}}
+<button (click)="cambiar()">Cambiar</button>
+<hr>
+
+<button (click)="ocultar(false)" *ngIf="mostrar">Ocultar</button>
+<br>
+<button (click)="ocultar(true)" *ngIf="!mostrar">Mostrar</button>
+
+<app-pages *ngIf="mostrar"></app-pages>
